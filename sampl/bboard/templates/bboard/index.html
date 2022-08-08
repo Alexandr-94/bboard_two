@@ -1,0 +1,17 @@
+{% extends "layout/basic.html" %}
+
+{% block content %}
+{% for bb in bbs %}
+<div>
+    <p>{{ bb.content }}</p>
+    <p><a href="/bboard/{{ bb.rubric.pk }}/">
+            {{ bb.rubric.name }}
+    </a></p>
+
+    <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+    <p><a href="bb_form/{{ bb.rubric.pk }}/">
+            Изменить
+    </a></p>
+</div>
+{% endfor %}
+{% endblock %}
